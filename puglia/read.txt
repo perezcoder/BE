@@ -1,0 +1,99 @@
+1- configurare file .env
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=homestead
+    DB_USERNAME=homestead
+    DB_PASSWORD=secret
+
+2- php artisan make:model Article -m
+    creazione model Article
+
+3-
+public function up()
+{
+    Schema::create('articles', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('title');
+        $table->text('body');
+        $table->timestamps();
+    });
+}
+
+4- php artisan migrate
+
+5-
+class Article extends Model
+{
+    protected $fillable = ['title', 'body'];
+}
+
+6- php artisan make:seeder ArticlesTableSeeder
+
+7-
+class ArticlesTableSeeder extends Seeder
+{
+    public function run()
+    {
+        // Let's truncate our existing records to start from scratch.
+        Article::truncate();
+
+        $faker = \Faker\Factory::create();
+
+        // And now, let's create a few articles in our database:
+        for ($i = 0; $i < 50; $i++) {
+            Article::create([
+                'title' => $faker->sentence,
+                'body' => $faker->paragraph,
+            ]);
+        }
+    }
+}
+
+8- php artisan db:seed --class=ArticlesTableSeeder
+
+9- php artisan make:seeder UsersTableSeeder
+
+10- 
+class UsersTableSeeder extends Seeder
+{
+    public function run()
+    {
+        // Let's clear the users table first
+        User::truncate();
+
+        $faker = \Faker\Factory::create();
+
+        // Let's make sure everyone has the same password and 
+        // let's hash it before the loop, or else our seeder 
+        // will be too slow.
+        $password = Hash::make('toptal');
+
+        User::create([
+            'name' => 'Administrator',
+            'email' => 'admin@test.com',
+            'password' => $password,
+        ]);
+
+        // And now let's generate a few dozen users for our app:
+        for ($i = 0; $i < 10; $i++) {
+            User::create([
+                'name' => $faker->name,
+                'email' => $faker->email,
+                'password' => $password,
+            ]);
+        }
+    }
+}
+
+11- 
+class DatabaseSeeder extends Seeder
+{
+    public function run()
+    {
+        $this->call(ArticlesTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
+    }
+}
+
+12- php artisan db:seed
