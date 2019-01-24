@@ -43,7 +43,7 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
+            'port' => env('DB_PORT', '8000'),
             'database' => env('DB_DATABASE', 'pugliaDB'),
             'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', 'toor'),
