@@ -22,6 +22,8 @@ class ArticlesTableSeeder extends Seeder
             Article::create([
                 'title' => $faker->sentence,
                 'body' => $faker->paragraph,
+                'immagine' => $faker->sentence,
+                'categoria_id' => $faker->numberBetween(1,20)
             ]);
         }
     }
