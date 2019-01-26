@@ -43,6 +43,13 @@ Use App\Article;
     Route::post('servizios', 'ServizioController@store');
     Route::put('servizios/{servizio}', 'ServizioController@update');
     Route::delete('servizios/{servizio}', 'ServizioController@delete');
+
+    //ROUTE CERTIFICAZIONE
+    Route::get('certificaziones', 'CertificazioneController@index');
+    Route::get('certificaziones/{certificazione}', 'CertificazioneController@show');
+    Route::post('certificaziones', 'CertificazioneController@store');
+    Route::put('certificaziones/{certificazione}', 'CertificazioneController@update');
+    Route::delete('certificaziones/{certificazione}', 'CertificazioneController@delete');
 //});
 
 /*
