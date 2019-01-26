@@ -36,6 +36,13 @@ Use App\Article;
     Route::post('immagines', 'ImmagineController@store');
     Route::put('immagines/{immagine}', 'ImmagineController@update');
     Route::delete('immagines/{immagine}', 'ImmagineController@delete');
+
+    //ROUTE SERVIZIO
+    Route::get('servizios', 'ServizioController@index');
+    Route::get('servizios/{servizio}', 'ServizioController@show');
+    Route::post('servizios', 'ServizioController@store');
+    Route::put('servizios/{servizio}', 'ServizioController@update');
+    Route::delete('servizios/{servizio}', 'ServizioController@delete');
 //});
 
 /*
