@@ -50,6 +50,15 @@ Use App\Article;
     Route::post('certificaziones', 'CertificazioneController@store');
     Route::put('certificaziones/{certificazione}', 'CertificazioneController@update');
     Route::delete('certificaziones/{certificazione}', 'CertificazioneController@delete');
+
+    //ROUTE HOMEPAGE
+    Route::get('homepages', 'HomepageController@index');
+    Route::get('homepages/{homepage}', 'HomepageController@show');
+    Route::post('homepages', 'HomepageController@store');
+    Route::put('homepages/{homepage}', 'HomepageController@update');
+    Route::delete('homepages/{homepage}', 'HomepageController@delete');
+
+
 //});
 
 /*
