@@ -58,6 +58,13 @@ Use App\Article;
     Route::put('homepages/{homepage}', 'HomepageController@update');
     Route::delete('homepages/{homepage}', 'HomepageController@delete');
 
+    //ROUTE CHISIAMO
+    Route::get('chisiamos', 'ChiSiamoController@index');
+    Route::get('chisiamos/{chisiamo}', 'ChiSiamoController@show');
+    Route::post('chisiamos', 'ChiSiamoController@store');
+    Route::put('chisiamos/{chisiamo}', 'ChiSiamoController@update');
+    Route::delete('chisiamos/{chisiamo}', 'ChiSiamoController@delete');
+
 
 //});
 
