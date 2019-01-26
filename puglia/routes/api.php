@@ -65,6 +65,12 @@ Use App\Article;
     Route::put('chisiamos/{chisiamo}', 'ChiSiamoController@update');
     Route::delete('chisiamos/{chisiamo}', 'ChiSiamoController@delete');
 
+    //ROUTE SOTTOTITOLO
+    Route::get('sottotitolos', 'SottotitoloController@index');
+    Route::get('sottotitolos/{sottotitolo}', 'SottotitoloController@show');
+    Route::post('sottotitolos', 'SottotitoloController@store');
+    Route::put('sottotitolos/{sottotitolo}', 'SottotitoloController@update');
+    Route::delete('sottotitolos/{sottotitolo}', 'SottotitoloController@delete');
 
 //});
 
