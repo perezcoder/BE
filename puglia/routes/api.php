@@ -14,13 +14,22 @@ Use App\Article;
 |
 */
 
-Route::group(['middleware' => 'auth:api'], function() {
+//Route::group(['middleware' => 'auth:api'], function() {
+
+    //ROUTE ARTICOLI
     Route::get('articles', 'ArticleController@index');
     Route::get('articles/{article}', 'ArticleController@show');
     Route::post('articles', 'ArticleController@store');
     Route::put('articles/{article}', 'ArticleController@update');
     Route::delete('articles/{article}', 'ArticleController@delete');
-});
+
+    //ROUTE CATEGORIE
+    Route::get('categorias', 'CategoriaController@index');
+    Route::get('categorias/{categoria}', 'CategoriaController@show');
+    Route::post('categorias', 'CategoriaController@store');
+    Route::put('categorias/{categoria}', 'CategoriaController@update');
+    Route::delete('categorias/{categoria}', 'CategoriaController@delete');
+//});
 
 /*
 Route::get('articles', 'ArticleController@index');
