@@ -4,12 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use Illuminate\Support\Facades\DB;
  
 class ArticleController extends Controller
 {
     public function index()
     {
-        return Article::all();
+        $articles = DB::table('articles')
+            ->join('categorias', 'articles.categoria_id', '=', 'categorias.id')
+            ->select('articles.*','categorias.nome as nomeCategoria')
+            ->get();
+        return $articles;
+        //return Article::all();
     }
 
     public function show(Article $article)
