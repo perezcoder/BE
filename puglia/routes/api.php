@@ -29,6 +29,13 @@ Use App\Article;
     Route::post('categorias', 'CategoriaController@store');
     Route::put('categorias/{categoria}', 'CategoriaController@update');
     Route::delete('categorias/{categoria}', 'CategoriaController@delete');
+
+    //ROUTE IMMAGINE
+    Route::get('immagines', 'ImmagineController@index');
+    Route::get('immagines/{immagine}', 'ImmagineController@show');
+    Route::post('immagines', 'ImmagineController@store');
+    Route::put('immagines/{immagine}', 'ImmagineController@update');
+    Route::delete('immagines/{immagine}', 'ImmagineController@delete');
 //});
 
 /*
